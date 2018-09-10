@@ -1,0 +1,59 @@
+/*
+* AQUA - Perfect Project Launching Template
+* Release Date: June 2017
+* Last Update: June 2017
+* Author: Madeon08
+* Copyright (C) 2017 Madeon08
+* This is a premium product available exclusively here : http://themeforest.net/user/Madeon08/portfolio
+*/
+
+// WebKit font-smoothing
+// Values: none, antialiased (default), subpixel-antialiased
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+// General Media Queries
+$phone-width: 575px;
+$tablet-width: 767px;
+$medium-width: 991px;
+$notebook-width: 1199px;
+
+$vertical-height: 750px;
+
+@mixin verticalmq {
+    @media only screen and (max-height: $vertical-height) {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-phone {
+    @media only screen and (max-width: $phone-width) {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-landphone {
+    @media only screen and (max-width: $tablet-width) {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-tablet {
+    @media only screen and (max-width: $medium-width) {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-desktop {
+    @media only screen and (max-width: $notebook-width) {
+        @content;
+    }
+}
