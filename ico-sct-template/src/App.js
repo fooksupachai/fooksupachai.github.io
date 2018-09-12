@@ -7,6 +7,8 @@ import gallery2 from './img/gallery-2.jpg';
 import gallery3 from './img/gallery-3.jpg';
 import gallery4 from './img/gallery-4.jpg';
 import Countdown from './countdown.js';
+import icomanage from './IcoManage.js';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 // import {C} from './gimmic.js';
 
 class App extends Component {
@@ -15,12 +17,15 @@ class App extends Component {
     super();
     // C();
   }
-   
+  
   
   render() { 
     return (
-
       <div>
+
+		  <Router>
+			<Route exact path='/icomanage' component={icomanage}/>
+		 </Router>
 
         {/* <!-- LOADING --> */}
 		<div id="loading">
@@ -71,8 +76,8 @@ class App extends Component {
           <a href="#main-contact" data-offset="80" data-offset-small-screen="120">Contact</a>
         </li>
         <li className="nav-item">
-          <a id="newsletter-button" href="#" class="open-newsletter">Newsletter</a>
-        </li>
+          <a  href="/ico" class="open-newsletter">Ico mangement</a>
+	    </li>
       </ul>
     </div>
   </nav>
@@ -104,7 +109,7 @@ class App extends Component {
 
 						<h1 className="sr-bottom-sequenced-home special-text">ICO Countdown</h1>
 
-           {/* <Countdown /> */}
+           
             <button type="button" className="btn btn-primary btn-lg gradient">BUY WEIS TOKENS</button>
 						
 
